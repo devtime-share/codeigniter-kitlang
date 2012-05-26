@@ -28,28 +28,31 @@ In your controller or your controller root
 
 	$this->load->spark('kitlang/1.0.0');
 
-Then you can use those if needed
+Then you can use those methods if needed :
 
-	// Refers to the lang code in URL
+Refers to the current lang code
+	
 	$lang = $this->kitlang->get_lang();
 
-	// Refers to the language directory name in application/language
+Refers to the current language directory name in application/language
+	
 	$language = $this->kitlang->get_language();
 
-##helpers
-You can use those helpers in your application once kitlang has detected the current lang code.
+##helpers  
 
-	// Build the current URL adding the lang code $lang as the first segment. 
+###switch_lang()
+Build the current URL adding the lang code $lang as the first segment. 
 	
-		$url_lang = switch_lang($lang);
+	$url_lang = switch_lang($lang);
 
-	// Override site_url() helper building the URL automatically with the current lang code
+###site_url()
+Override site_url() helper building the URL automatically with the current lang code.
 	
-		$url_lang = site_url(controller/action);
+	$url_lang = site_url(controller/action);
 
-	// Fallback to default behaviour
+Fallback to default behaviour
 	
-		$url_without_lang = site_url(controller/action, true);
+	$url_without_lang = site_url(controller/action, true);
 
 
 
